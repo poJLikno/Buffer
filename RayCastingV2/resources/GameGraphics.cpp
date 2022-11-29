@@ -1,19 +1,19 @@
-#include "../headers/GraphGDI.h"
+#include "../headers/Engine.h"
 
 //Initialization
-GraphGDI::GraphGDI()
+GameGraphics::GameGraphics()
 {
     GdiplusStartupInput gdiplusStartupInput{};
-    GdiplusStartup(GraphGDI::gdiplusTokenPointer, &gdiplusStartupInput, NULL);
+    GdiplusStartup(GameGraphics::gdiplusTokenPointer, &gdiplusStartupInput, NULL);
 }
 
-GraphGDI::~GraphGDI()
+GameGraphics::~GameGraphics()
 {
-    GraphGDI::gdiplusTokenPointer = nullptr;
-    GdiplusShutdown(GraphGDI::gdiplusToken);
+    GameGraphics::gdiplusTokenPointer = nullptr;
+    GdiplusShutdown(GameGraphics::gdiplusToken);
 }
 
-//Bufer
+/*//Bufer
 void GraphGDI::CreateDCBufer(HDC dc)
 {
     GraphGDI::bufer = CreateCompatibleDC(dc);
@@ -33,4 +33,4 @@ void GraphGDI::DeleteDCBufer()
 {
     DeleteDC(GraphGDI::bufer);
     DeleteObject(GraphGDI::bufbit);
-}
+}*/

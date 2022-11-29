@@ -2,6 +2,7 @@
 
 extern LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam);
 
+//Initialization
 GameWindow::GameWindow(const char* window_name, int window_pos_x, int window_pos_y, HINSTANCE hInstance)
 {
     WNDCLASS wc;
@@ -27,6 +28,7 @@ GameWindow::GameWindow(const char* window_name, int window_pos_x, int window_pos
     ShowCursor(FALSE);
 }
 
+//Parse messages
 void GameWindow::ParseGameWindowMessages(MSG msg)
 {
     while (GetMessage(&msg, NULL, 0, 0))

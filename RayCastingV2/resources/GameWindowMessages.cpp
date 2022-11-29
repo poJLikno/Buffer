@@ -1,8 +1,19 @@
 #include "../headers/Engine.h"
 
+//Messages
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
 {
-    return DefWindowProc(hwnd, message, wparam, lparam);
+    if (message == WM_KEYDOWN)
+    {
+        if (wparam == VK_ESCAPE) DestroyWindow(hwnd);
+        return 0;
+    }
+    else if (message == WM_DESTROY)
+    {
+        PostQuitMessage(0);
+        return 0;
+    }
+    else return DefWindowProc(hwnd, message, wparam, lparam);
 
     /*if (message == WM_CREATE)
     {
