@@ -3,6 +3,8 @@
 
 #include "main.h"
 
+extern class Player;
+
 class GameWindow
 {
 public:
@@ -36,14 +38,14 @@ public:
 class GameControl
 {
 private:
-	float* pos_x = nullptr;
-	float* pos_y = nullptr;
-	float* angle = nullptr;
+	struct PlayerProperties* object = nullptr;
+	POINT c_pos;
 
 public:
 	void Walk();
+	void Mouse();
 
-	GameControl(float pos_x, float pos_y, float angle);
+	GameControl(struct PlayerProperties* obj);
 	~GameControl();
 };
 
