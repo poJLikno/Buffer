@@ -3,17 +3,20 @@
 
 #include "main.h"
 
-extern class Player;
+//extern class Player;
 
 class GameWindow
 {
+private:
+	void TransformScreen();
+
 public:
 	HWND hwnd{};
 	MSG msg{};
 
 	void ParseGameWindowMessages(MSG msg);
 
-	GameWindow(const char* window_name, int window_pos_x, int window_pos_y, HINSTANCE hInstance);
+	GameWindow(const char* window_name, HINSTANCE hInstance);
 };
 
 class GameGraphics
@@ -23,14 +26,13 @@ private:
 	ULONG_PTR* gdiplusTokenPointer = &gdiplusToken;
 
 public:
-	/*
-	HDC bufer{};
-	HBITMAP bufbit{};
+	HDC buffer{};
+	HBITMAP buffbit{};
 
-	void CreateDCBufer(HDC dc);
-	void ShowDCBufer(HDC dc);
-	void DeleteDCBufer();
-	*/
+	void CreateDCBuffer(HDC dc);
+	void ShowDCBuffer(HDC dc);
+	void DeleteDCBuffer();
+
 	GameGraphics();
 	~GameGraphics();
 };

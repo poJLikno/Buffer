@@ -1,9 +1,11 @@
-#include "../headers/Engine.h"
+#include "../../headers/Engine.h"
 
 GameControl::GameControl(struct PlayerProperties* obj)
 {
 	object = obj;
 	obj = nullptr;
+
+	c_pos = (POINT)0;
 }
 
 GameControl::~GameControl()
@@ -39,9 +41,9 @@ void GameControl::Mouse()
 {
 	GetCursorPos(&c_pos);
 
-	if (c_pos.x != screenwidth / 2)
+	if (c_pos.x != screen_width / 2)
 	{
-		object->angle += ((float)c_pos.x - (float)screenwidth / 2.f) / 10.f;
-		SetCursorPos(screenwidth / 2, screenheight / 2);
+		object->angle += ((float)c_pos.x - (float)screen_width / 2.f) / 10.f;
+		SetCursorPos(screen_width / 2, screen_height / 2);
 	}
 }
