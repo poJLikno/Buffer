@@ -12,33 +12,38 @@ public:
 	//~Player();
 };
 
-class MiniMap
+class GUI
 {
 private:
-	HDC dc;
+	HDC* dc = nullptr;
 	float scale;
 	struct PlayerProperties* object = nullptr;
 	float cur_angle;
+	float crosses[screen_width];
 
-	void DrawWalls();
-	void DrawRays();
-	void DrawPlayer();
+	void DrawWallsMap();
+	void DrawRaysMap();
+	void DrawPlayerMap();
 
 public:
-	const char map[map_height / 100][map_width / 100 + 1] =
-	{
-		"wwwwww",
-		"w....w",
-		"w.ww.w",
-		"...w.w",
-		"w....w",
-		"wwwwww"
-	};
+	void DrawMap(HDC* dc, struct PlayerProperties* obj, float crosses[screen_width], float scale);
+};
+
+class Canvas
+{
+private:
+	HDC* dc = nullptr;
+	PlayerProperties* object = nullptr;
+	float cur_angle;
 
 	float VerticalCross();
 	float HorizontalCross();
 	float NearestCross();
-	void ShowMap(HDC* dc, struct PlayerProperties* obj, float scale);
+
+public:
+	float crosses[screen_width];
+
+	void DrawCanvas(HDC* hdc, PlayerProperties* obj);
 };
 
 #endif

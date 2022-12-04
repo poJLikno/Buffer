@@ -3,9 +3,10 @@
 HDC dc;
 PAINTSTRUCT ps;
 GameGraphics* paint = nullptr;
-Player player(map_width / 2, map_height / 2, 30.f, 120.f, 300.f);
+Player player(map_width / 2, map_height / 2, 30.f, 80.f, 800.f);
 GameControl player_control(&player.player_properties);
-MiniMap world_map;
+Canvas game_canvas;
+GUI world_map;
 
 //Messages
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
@@ -28,7 +29,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
 
         paint->CreateDCBuffer(dc);
 
-        world_map.ShowMap(&paint->buffer, &player.player_properties, 1.f);
+        game_canvas.DrawCanvas(&paint->buffer, &player.player_properties);
+        world_map.DrawMap(&paint->buffer, &player.player_properties, game_canvas.crosses, 0.25f);
 
         paint->ShowDCBuffer(dc);
         paint->DeleteDCBuffer();

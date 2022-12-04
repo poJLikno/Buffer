@@ -14,9 +14,9 @@ public:
 	HWND hwnd{};
 	MSG msg{};
 
-	void ParseGameWindowMessages(MSG msg);
-
 	GameWindow(const char* window_name, HINSTANCE hInstance);
+
+	void ParseGameWindowMessages(MSG msg);
 };
 
 class GameGraphics
@@ -29,12 +29,12 @@ public:
 	HDC buffer{};
 	HBITMAP buffbit{};
 
+	GameGraphics();
+	~GameGraphics();
+
 	void CreateDCBuffer(HDC dc);
 	void ShowDCBuffer(HDC dc);
 	void DeleteDCBuffer();
-
-	GameGraphics();
-	~GameGraphics();
 };
 
 class GameControl
@@ -44,11 +44,11 @@ private:
 	POINT c_pos;
 
 public:
-	void Walk();
-	void Mouse();
-
 	GameControl(struct PlayerProperties* obj);
 	~GameControl();
+
+	void Walk();
+	void Mouse();
 };
 
 #endif

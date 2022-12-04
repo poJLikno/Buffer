@@ -17,23 +17,23 @@ void GameControl::Walk()
 {
 	if (GetKeyState('W') < 0)
 	{
-		object->pos_x += 5.f * cos(object->angle * PI / 180.f);
-		object->pos_y += 5.f * sin(object->angle * PI / 180.f);
+		object->pos_x += 2.5f * cos(object->angle * PI / 180.f);
+		object->pos_y += 2.5f * sin(object->angle * PI / 180.f);
 	}
 	if (GetKeyState('A') < 0)
 	{
-		object->pos_x += 5.f * cos((object->angle - 90.f) * PI / 180.f);
-		object->pos_y += 5.f * sin((object->angle - 90.f) * PI / 180.f);
+		object->pos_x += 2.5f * cos((object->angle - 90.f) * PI / 180.f);
+		object->pos_y += 2.5f * sin((object->angle - 90.f) * PI / 180.f);
 	}
 	if (GetKeyState('S') < 0)
 	{
-		object->pos_x += 5.f * cos((object->angle + 180.f) * PI / 180.f);
-		object->pos_y += 5.f * sin((object->angle + 180.f) * PI / 180.f);
+		object->pos_x += 2.5f * cos((object->angle + 180.f) * PI / 180.f);
+		object->pos_y += 2.5f * sin((object->angle + 180.f) * PI / 180.f);
 	}
 	if (GetKeyState('D') < 0)
 	{
-		object->pos_x += 5.f * cos((object->angle + 90.f) * PI / 180.f);
-		object->pos_y += 5.f * sin((object->angle + 90.f) * PI / 180.f);
+		object->pos_x += 2.5f * cos((object->angle + 90.f) * PI / 180.f);
+		object->pos_y += 2.5f * sin((object->angle + 90.f) * PI / 180.f);
 	}
 }
 
