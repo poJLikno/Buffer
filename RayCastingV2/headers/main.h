@@ -14,12 +14,8 @@ using namespace std;
 using namespace Gdiplus;
 
 #include "Settings.h"
-//#include "GraphGDI.h"
-//#include "Window.h"
-#include "Engine.h"//
-//#include "Player.h"
-//#include "MiniMap.h"
-//#include "World.h"
-
+#include "Structures.h"
+#include "Engine.h"
+#include "Logic.h"
 
 #endif
