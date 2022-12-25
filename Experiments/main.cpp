@@ -36,7 +36,7 @@ int main(int argc, const char *argv[])
     surface[0](10.f, 0.f);
     surface[1](10.f, -10.f);
     
-    vec2 reflected = vector * surface[0].norm() * 2.f - vector;
+    vec2 reflected = vector * surface[0].norm() * surface[0].norm() * 2.f - vector;
     
     cout << reflected.x << "  " << reflected.y << "  " << reflected.length() << endl;
     reflected.norm();
