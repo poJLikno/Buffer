@@ -9,4 +9,6 @@
 
 using namespace std;
 
+#include "vec2_type.h"
+
 #endif
