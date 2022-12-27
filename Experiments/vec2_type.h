@@ -1,7 +1,7 @@
 #ifndef VEC2_TYPE_H_
 #define VEC2_TYPE_H_
 
-#include "main.h"
+#include <math.h>
 
 class vec2
 {
@@ -28,5 +28,7 @@ vec2 operator* (vec2 a, vec2 b);
 vec2 normalize(vec2 a);
 
 float dot(vec2 a, vec2 b);
+
+vec2 reflect(vec2 a, vec2 normale);
 
 #endif
