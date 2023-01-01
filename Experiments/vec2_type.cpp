@@ -23,6 +23,6 @@ vec2 normalize(vec2 a)
     return vec2(a.x, a.y);
 }
 
-float dot(vec2 a, vec2 b) { return a.x * b.x + a.y * b.y; }
-
 vec2 reflect(vec2 a, vec2 normale) { return vec2(a - 2.f * dot(a, normale) * normale); }
+
+float dot(vec2 a, vec2 b) { return a.x * b.x + a.y * b.y; }
