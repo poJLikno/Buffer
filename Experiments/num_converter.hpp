@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 int bin_to_dec(char *str);
 int bin_to_dec(string str);
 

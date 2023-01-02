@@ -1,4 +1,4 @@
-#include "vec2_type.h"
+#include "vec2_type.hpp"
 
 float vec2::length() { return sqrt(pow(x, 2.f) + pow(y, 2.f)); }
 
@@ -26,3 +26,5 @@ vec2 normalize(vec2 a)
 vec2 reflect(vec2 a, vec2 normale) { return vec2(a - 2.f * dot(a, normale) * normale); }
 
 float dot(vec2 a, vec2 b) { return a.x * b.x + a.y * b.y; }
+
+std::ostream &operator<< (std::ostream &stream, vec2 a) { return stream << "{" << a.x << ";" << a.y << "}"; }

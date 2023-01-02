@@ -1,4 +1,4 @@
-#include "num_converter.h"
+#include "num_converter.hpp"
 
 int bin_to_dec(char *str)
 {
